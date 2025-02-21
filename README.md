@@ -29,6 +29,10 @@ Configuration file for shortcuts - You can add loading shortcuts from JSON, e.g.
 Console interface - If you want.
 Game detection - The program could automatically enable Focus Mode when it detects a full-screen application (e.g. via psutil).
 
+DLC CONTENT:
+if you want the program to run automatically when the system starts, click win + r and type shell:startup, a folder will open, put the .py file there and you're done.
+You can restart the system to check if it works.
+Sometimes you have to wait 5/10 seconds, it depends on the disk, processor, etc.
                
 KEYBOARDOLOGY: (⬆⬆⬆⬆⬆CHECK UP NEW KEYS⬆⬆⬆⬆)
 
