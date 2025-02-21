@@ -4,31 +4,7 @@ setlocal
 REM Function to download a file using PowerShell
 :download
 powershell -Command "& {Invoke-WebRequest -Uri %1 -OutFile %2}"
-
-REM Check if curl is installed
-curl --version 2>nul
-if %errorlevel% neq 0 (
-    echo Curl is not installed. Downloading and installing curl...
-    
-    
-    REM Download curl
-    set "curl_url=https://curl.se/windows/dl-8.8.0_3/curl-8.8.0_3-win64-mingw.zip"
-    set "curl_zip=curl.zip"
-    
-    call :download %curl_url% %curl_zip%
-
-    REM Extract curl
-    powershell -Command "Expand-Archive -Path %curl_zip% -DestinationPath . -Force"
-    
-    REM Move curl.exe to the system directory
-    move /Y curl-7.79.1_1-win64-mingw\bin\curl.exe %SystemRoot%\System32
-    
-    REM Clean up downloaded and extracted files
-    rd /S /Q curl-7.79.1_1-win64-mingw
-    del %curl_zip%
-) else (
-    echo Curl is already installed.
-)
+goto :eof
 
 REM Check if Python is installed
 python --version 2>nul
@@ -41,8 +17,11 @@ if %errorlevel% neq 0 (
     
     call :download %python_url% %python_installer%
 
-    REM Install Python silently
+    REM Install Python silently and add it to PATH
     %python_installer% /quiet InstallAllUsers=1 PrependPath=1
+
+    REM Wait a moment to ensure Python is fully installed
+    timeout /t 5 /nobreak >nul
 
     REM Delete the installer after installation
     del %python_installer%
@@ -70,8 +49,12 @@ if %errorlevel% neq 0 (
     echo Pip is already installed.
 )
 
-REM Install required Python libraries
-python -m pip install keyboard plyer pycaw comtypes ctypes json
+REM Install required Python libraries for the Music Controller
+echo Installing required Python libraries...
+python -m pip install keyboard plyer pycaw comtypes
+
+REM Note: 'ctypes' and 'json' are built-in Python modules, no need to install them
+echo Note: 'ctypes' and 'json' are already included with Python.
 
 echo Installation completed successfully.
 pause
