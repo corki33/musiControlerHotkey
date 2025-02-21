@@ -26,7 +26,7 @@ Better error handling - The program won't crash if there's a problem with the au
 Comments and docstrings - The code is more readable and easier to modify.
 Suggestions for further changes:
 Configuration file for shortcuts - You can add loading shortcuts from JSON, e.g. hotkeys.json, to easily change them without editing the code.
-Console interface - If you want, I can add a simple text loop for manual control (e.g. "set volume 50").
+Console interface - If you want.
 Game detection - The program could automatically enable Focus Mode when it detects a full-screen application (e.g. via psutil).
 
                
