@@ -24,7 +24,7 @@ if you want the program to run automatically when the system starts, click win +
 You can restart the system to check if it works.
 Sometimes you have to wait 5/10 seconds, it depends on the disk, processor, etc.
                
-KEYBOARDOLOGY: (⬆⬆⬆⬆⬆CHECK UP NEW KEYS⬆⬆⬆⬆)
+KEYBOARDOLOGY: (⬆⬆⬆⬆⬆CHECK UP NEW UPDATE KEYS 21/02⬆⬆⬆⬆)
 
 ctrl + alt + p 	 	music controller play pause music
 ctrl + alt + up	 	music controller increase volume
